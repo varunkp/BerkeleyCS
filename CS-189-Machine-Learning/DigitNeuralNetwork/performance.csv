@@ -1,0 +1,3 @@
+Epoch Number,Time Elapsed,Training Accuracy (10k set),Test Accuracy MSE,Mean Squared Error,Cross Entropy Error,Eta,Num_epochs
+,,,,,,,,0.6,30
+10,380.125877,0.7796,0.7715,1521.81077529,-690089.516896,,

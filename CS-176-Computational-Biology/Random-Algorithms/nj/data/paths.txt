@@ -1,0 +1,5 @@
+/Users/telliott_admin/Desktop/nj/data/nj_data.phylip.txt
+
+
+
+ln -s ~/Software/phylip-3.69/exe/neighbor.app/Contents/MacOS/neighbor ~/bin/neighbor

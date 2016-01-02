@@ -1,0 +1,25 @@
+python nj.cogent.py 
+/Library/Python/2.6/site-packages/cogent/util/progress_display.py:27: UserWarning: Not using MPI as mpi4py not found
+  from cogent.util import parallel, terminal
+                                        /-A
+                              /edge.0--|
+                    /edge.1--|          \-B
+                   |         |
+          /edge.2--|          \-C
+         |         |
+         |          \-F
+-root----|
+         |--D
+         |
+          \-E
+
+edge.0 A:1.0;
+edge.0 B:4.0;
+edge.1 C:2.0;
+edge.2 F:4.75;
+root D:2.75;
+root E:2.25;
+
+edge.2 edge.1 1.25 edge.2 edge.0 2.25
+edge.1 edge.0 1.0
+root edge.2 0.75 root edge.1 2.0 root edge.0 3.0 ((((A:1.0,B:4.0):1.0,C:2.0):1.25,F:4.75):0.75,D:2.75,E:2.25);

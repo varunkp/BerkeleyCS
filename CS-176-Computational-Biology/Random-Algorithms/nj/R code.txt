@@ -1,0 +1,15 @@
+setwd('Desktop/nj')
+data = read.table('data/nj_data.txt',head=F)
+colnames(data) = c('A','B','C','D','E','F')
+rownames(data) = c('A','B','C','D','E','F')
+# do not do:  dist(data) !!!
+d = as.dist(data)
+d
+library(ape)
+tr = nj(d)
+names(tr)
+tr$edge.length
+tr$edge
+tr$tip.label
+plot(tr,type='unrooted')
+write.tree(tr)

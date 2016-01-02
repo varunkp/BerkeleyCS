@@ -1,0 +1,50 @@
+                                     GRADER
+
+Name of student running submit: Lauri Takacsi
+Login of student running submit: cs61b-sz
+
+Second team member's name: Varun Pemmaraju
+Second team member's login: cs61b-yo
+
+
+IMPORTANT:  Once you've submitted Project 3 once, the same team member should
+submit always.  If a different teammate must submit, inform cs61b@cory.eecs of
+all the details.  Include a complete list of team members, and let us know
+which submission you want graded.
+
+If you've submitted your project once, or even written a substantial amount of
+code together, you may not change partners without the permission of the
+instructor.
+
+Write a file called GRADER that briefly documents your data structures and the
+design decisions you made in WUGraph.java and Kruskal.java that extend or
+depart from those discussed here. In particular, tell us what choices you made
+in your implementation to ensure that removeVertex() runs in O(d) time (as
+described in Part I, design element [4]) and getVertices() runs in O(|V|) time
+(design element [2]).
+===============================================================================
+
+The WUGraph data structure is made up of two hashTables, one holding Edges and one holding Vertices.
+It also contains a DList for vertices and edges that is used to support removal in the desired runtime.
+Of course, this necessitated Edge and Vertex classes.
+
+The Vertex class stored the vertex's object as well as a DList that contains all the Edges
+connected to the vertex.
+
+The Edge class stored the start vertex and the end vertex, as well as the half-edge
+to the edge and the Edge's weight.
+
+removeVertex() runs in O(d) time because it iterates once through the vertex list, which has size d.
+Edge removal is constant time because each Edge has a reference to its node, and the
+hashTable lookup for Edge to be removed also runs in constant time.
+
+getVertices() takes O(V) time because it iterates through the vertices DList and adds vertices as it goes.
+
+Kruskal first creates a new Graph, t,  that will be returned as the minimum spanning tree.
+First, vertices from the graph are added to t and inserted into a vertex HashTable with their value being
+their vertex count.
+An array of KruskalEdges (like Edges, but for encapsulation) is generated using getNeighbors()
+and a hash table of KruskalEdges is created. These KruskalEdges are then sorted by weight using a
+modified version of quickSort.
+Finally, using the DisJoint sets structure and union(), edges are created that fulfil Kruskal's algoritm and
+are added to the spanning tree.
